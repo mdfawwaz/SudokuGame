@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<style>
+		 .container{
+                display: grid;
+                grid-template-columns: 100px 100px 100px;
+            }
+	</style>
+	
+	
+    <meta charset="UTF-8">
+    <title>Sudoku Game</title>
+    
+</head>
+<body>
+    <h1>Sudoku Game</h1>
+    <div class="container">
+        <div th:each="tiles:${sudokuList}">
+            <span th:text="${tiles.value}">1</span>
+        </div>
+    </div>
+     <body>
+        <div class="container">
+            <span>20</span>
+            <span>20</span>
+            <span>1</span>
+            <span>1</span>
+            <span>1</span>
+            <span>1</span>
+            <span>1</span>
+            <span>1</span>
+            <span>1</span>
+        </div>
+    </body>
+    
+</body>
+</html>r

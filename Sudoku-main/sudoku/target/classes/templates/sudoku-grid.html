@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Sudoku Grid</title>
+</head>
+<body>
+    <h1>Sudoku Grid</h1>
+
+    <form method="post" action="/verify">
+        <table border="1">
+            <tr th:each="row, rowStat : ${sudokuGrid.grid}">
+                <td th:each="cell, cellStat : ${row}">
+                    <input type="text" th:field="*{sudokuGrid.grid[__${rowStat.index}__][__${cellStat.index}__]}" size="1" maxlength="1" />
+                </td>
+            </tr>
+        </table>
+        <button type="submit">Verify</button>
+    </form>
+
+    <form method="post" action="/save">
+        <input type="hidden" th:field="*{sudokuGrid.id}" />
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>
